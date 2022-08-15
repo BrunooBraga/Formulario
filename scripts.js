@@ -49,7 +49,19 @@ function checkInputs() {
     } else {
     setSuccessFor(passwordConfirmation);
     }
+
+    //  Verificando se todo o formulario está correto
     
+    const formControls = form.querySelectorAll('.form-control');
+
+    const formIsValid = [...formControls].every((formControl)=> {
+        return (formControl.classname = "form-control success");
+    });
+
+    if (formIsValid) {
+        console.log('Formulário Válido')
+    }
+
 }
 
 function setErrorFor(input, message) {
